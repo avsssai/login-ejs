@@ -15,6 +15,15 @@ router.post('/register',[
         .isLength('3')
         .withMessage('The name must be minimum 3 characters long.'),
         check('email').isEmail().withMessage('Please enter a valid email address'),
+        check('email').custom(value=>{
+            return User.findOne({email:value})
+                .then((user)=>{
+                    if(user){
+                        return Promise.reject('Email already enrolled.');
+
+                    }
+                })
+        }),
         check('email').not().isEmpty().withMessage('Enter an email.'),   
             check('password')
                 .isLength('6').withMessage('Password too short, min 6 characters required.'),
