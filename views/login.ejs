@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+
+<div class="container mt-3">
+    <div class="row justify-content-md-center">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <div class="login-header">
+                <h3>Login</h3>
+            </div>
+            <div class="login-form">
+                <form action="/users/login" method="POST">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="text" class="form-control" placeholder="john@example.com">
+                    </div>
+                          <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="text" class="form-control" placeholder="Password must be greater than 6 characters...">
+                    </div>
+                    <button class="btn btn-primary">Login</button>
+                </form>
+            </div>
+            <div class="register-route">
+                <h6>Dont have an account?</h6>
+                <form action="/users/register" method="GET">
+                <button class="btn btn-primary">Register</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-2"></div>
+    </div>
+</div>
